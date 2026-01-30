@@ -2,7 +2,7 @@
 
 This repository is deprecated. Development has moved to the [agent-skills monorepo](https://github.com/timothyjlaurent/agent-skills).
 
-**Please use:** `agent-skills/skills/browseros-mcporter/`
+**Please use:** [github.com/timothyjlaurent/agent-skills/tree/master/browseros-mcporter](https://github.com/timothyjlaurent/agent-skills/tree/master/browseros-mcporter)
 
 This standalone repo will no longer receive updates.
 
