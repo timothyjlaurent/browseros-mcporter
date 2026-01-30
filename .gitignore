@@ -31,3 +31,7 @@
 **/auth.json
 **/config.json
 !**/config.example.json
+
+# Additional local skills we're tracking
+!x-research/
+!youcom-browseros/
