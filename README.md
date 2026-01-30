@@ -127,17 +127,6 @@ BrowserOS Chromium
 
 **Use both:** MCP for structured tasks, CDP for escape-hatch power.
 
-## Integration with Other Skills
-
-This skill is infrastructure. Higher-level skills can build on it:
-
-- **web-scraper**: Use MCP for navigation and extraction
-- **form-filler**: MCP for input automation
-- **testing**: Automated UI testing via MCP tools
-- **monitoring**: Screenshot and content extraction
-
-This skill is independent — it doesn't require or depend on other skills.
-
 ## Troubleshooting
 
 **"BrowserOS not available"**
