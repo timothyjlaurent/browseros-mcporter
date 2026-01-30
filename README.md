@@ -152,7 +152,6 @@ npm install -g mcporter
 
 - [BrowserOS](https://browseros.com) — The browser automation platform
 - [MCP](https://modelcontextprotocol.io) — Model Context Protocol specification
-- [mcporter](https://github.com/clawdbot/mcporter) — MCP client CLI
 
 ## License
 
