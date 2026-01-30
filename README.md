@@ -151,6 +151,7 @@ npm install -g mcporter
 ## Related
 
 - [BrowserOS](https://browseros.com) — The browser automation platform
+- [BrowserOS MCP Tools](https://docs.browseros.com/features/use-with-claude-code#available-tools) — Available MCP tools reference
 - [MCP](https://modelcontextprotocol.io) — Model Context Protocol specification
 
 ## License
