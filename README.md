@@ -1,3 +1,13 @@
+# ⚠️ DEPRECATED
+
+This repository is deprecated. Development has moved to the [agent-skills monorepo](https://github.com/timothyjlaurent/agent-skills).
+
+**Please use:** `agent-skills/skills/browseros-mcporter/`
+
+This standalone repo will no longer receive updates.
+
+---
+
 # browseros-mcporter
 
 MCP (Model Context Protocol) wrapper for BrowserOS. Enables deterministic terminal-driven browser automation via `mcporter`.
