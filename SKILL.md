@@ -67,6 +67,9 @@ browseros_call.sh browser_click_element '{"tabId": <TAB_ID>, "nodeId": <NODE_ID>
 browseros_call.sh browser_type_text '{"tabId": <TAB_ID>, "nodeId": <NODE_ID>, "text": "hello"}'
 ```
 
+## Standalone Usage
+This skill operates independently. It wraps BrowserOS's MCP server into callable scripts — no other skills required.
+
 ## Notes
 - To discover exact tool names + arg schemas: `mcporter list browseros --schema`.
-- If the BrowserOS extension disconnects, restart BrowserOS or re-enable the extension.
+- If BrowserOS becomes unresponsive, restart it: `./scripts/ensure_browseros.sh`

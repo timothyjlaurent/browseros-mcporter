@@ -129,11 +129,14 @@ BrowserOS Chromium
 
 ## Integration with Other Skills
 
-This skill is infrastructure. Higher-level skills build on it:
+This skill is infrastructure. Higher-level skills can build on it:
 
-- **x-research**: Uses CDP for auth, can use MCP for browser tasks
-- **web-scraper**: Could use MCP for navigation and extraction
+- **web-scraper**: Use MCP for navigation and extraction
 - **form-filler**: MCP for input automation
+- **testing**: Automated UI testing via MCP tools
+- **monitoring**: Screenshot and content extraction
+
+This skill is independent — it doesn't require or depend on other skills.
 
 ## Troubleshooting
 
@@ -158,9 +161,9 @@ npm install -g mcporter
 
 ## Related
 
-- [x-research](https://github.com/YOUR_USERNAME/x-research) — X/Twitter research using CDP + this skill
 - [BrowserOS](https://browseros.com) — The browser automation platform
 - [MCP](https://modelcontextprotocol.io) — Model Context Protocol specification
+- [mcporter](https://github.com/clawdbot/mcporter) — MCP client CLI
 
 ## License
 
