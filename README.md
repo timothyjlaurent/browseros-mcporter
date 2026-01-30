@@ -26,11 +26,13 @@ Compare to raw CDP:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/browseros-mcporter.git
+cd browseros-mcporter
 ```
 
 ## Dependencies
 
 - [BrowserOS](https://browseros.com) installed
+- Node.js 14+ 
 - `mcporter` CLI: `npm install -g mcporter`
 
 ## Setup
@@ -43,32 +45,32 @@ export BROWSEROS_CMD="env DESKTOPINTEGRATION=1 /path/to/browseros.appimage %U"
 
 ## Usage
 
-### Direct Tool Calls
+### Direct Tool Calls (Cross-Platform)
 
 ```bash
 # Navigate to a URL
-./scripts/browseros_call.sh browser_navigate '{"url":"https://x.com"}'
+node scripts/browseros-call.js browser_navigate '{"url":"https://x.com"}'
 
 # Get active tab info
-./scripts/browseros_call.sh browser_get_active_tab '{}'
+node scripts/browseros-call.js browser_get_active_tab '{}'
 
 # List interactive elements on page
-./scripts/browseros_call.sh browser_get_interactive_elements '{"tabId": 123}'
+node scripts/browseros-call.js browser_get_interactive_elements '{"tabId": 123}'
 
 # Click an element
-./scripts/browseros_call.sh browser_click_element '{"tabId": 123, "nodeId": 456}'
+node scripts/browseros-call.js browser_click_element '{"tabId": 123, "nodeId": 456}'
 
 # Type text
-./scripts/browseros_call.sh browser_type_text '{"tabId": 123, "nodeId": 456, "text": "hello"}'
+node scripts/browseros-call.js browser_type_text '{"tabId": 123, "nodeId": 456, "text": "hello"}'
 ```
 
 ### Ensure BrowserOS is Running
 
 ```bash
-./scripts/ensure_browseros.sh
+node scripts/ensure-browseros.js
 ```
 
-Auto-launches BrowserOS if not running, with health checks.
+Auto-launches BrowserOS if not running, with health checks. Works on Linux, macOS, and Windows.
 
 ### Discover Available Tools
 
@@ -115,6 +117,22 @@ BrowserOS MCP server (port 9100)
 BrowserOS Chromium
 ```
 
+## Cross-Platform Support
+
+The Node.js scripts work on Linux, macOS, and Windows:
+
+| Platform | BrowserOS Location | Auto-Detection |
+|----------|-------------------|----------------|
+| **Linux** | `~/AppImages/browseros.appimage` | ✅ |
+| **macOS** | `/Applications/BrowserOS.app` | ✅ |
+| **Windows** | `%LOCALAPPDATA%\BrowserOS\BrowserOS.exe` | ✅ |
+
+Override auto-detection with environment variable:
+```bash
+export BROWSEROS_CMD="/path/to/your/browseros"
+node scripts/browseros-call.js browser_navigate '{"url":"https://x.com"}'
+```
+
 ## Comparison: MCP vs CDP
 
 | | MCP (this skill) | CDP (direct) |
@@ -134,8 +152,8 @@ BrowserOS Chromium
 # Check if BrowserOS is running
 curl http://127.0.0.1:9100/health
 
-# Manually launch
-./scripts/ensure_browseros.sh
+# Manually launch (cross-platform)
+node scripts/ensure-browseros.js
 ```
 
 **"mcporter: command not found"**
