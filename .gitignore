@@ -1,0 +1,33 @@
+# Only track skills we actively develop
+# Clawdhub-installed skills should not be committed by default
+
+# Ignore all skills by default
+*/
+
+# Except our developed skills
+!browseros-mcporter/
+!twitter-post/
+
+# Except monorepo infrastructure
+!templates/
+!README.md
+!CONTRIBUTING.md
+!LICENSE
+!INSTALL.md
+
+# Ignore git repos inside skills
+**/.git/
+
+# Ignore node_modules and caches
+**/node_modules/
+**/.clawdhub/
+**/__pycache__/
+**/.venv/
+**/*.pyc
+
+# Ignore sensitive files
+**/.env
+**/cookies.json
+**/auth.json
+**/config.json
+!**/config.example.json
