@@ -10,7 +10,7 @@ const os = require('os');
 const path = require('path');
 const fs = require('fs');
 
-const BROWSEROS_HEALTH_PORT = 9100;
+const BROWSEROS_HEALTH_PORT = 9101;
 const BROWSEROS_HEALTH_URL = `http://127.0.0.1:${BROWSEROS_HEALTH_PORT}/health`;
 const LAUNCH_TIMEOUT = 30000; // 30 seconds
 
