@@ -39,17 +39,16 @@ function getBrowserOSCommand() {
 // Check if BrowserOS health endpoint is responding
 function checkBrowserOS() {
   return new Promise((resolve) => {
-    const req = net.connect(BROWSEROS_HEALTH_PORT, '127.0.0.1', () => {
-      req.write('GET /health HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n');
-    });
-
-    let data = '';
-    req.on('data', (chunk) => {
-      data += chunk;
-    });
-
-    req.on('end', () => {
-      resolve(data.includes('"status":"ok"'));
+    const http = require('http');
+    
+    const req = http.get(BROWSEROS_HEALTH_URL, (res) => {
+      let data = '';
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+      res.on('end', () => {
+        resolve(data.includes('"status":"ok"'));
+      });
     });
 
     req.on('error', () => {
@@ -72,7 +71,8 @@ function checkBrowserOSProcess() {
     if (platform === 'win32') {
       cmd = 'tasklist /FI "IMAGENAME eq BrowserOS.exe"';
     } else {
-      cmd = 'pgrep -f "browseros"';
+      // Check for browseros or mcp-server (npx)
+      cmd = 'pgrep -f "browseros|mcp-server"';
     }
 
     exec(cmd, (error, stdout) => {
